@@ -10,11 +10,17 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.0"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "yarn test --bail --passWithNoTests --watchAll=false",
+      "eslint --fix"
+    ]
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -35,9 +41,12 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.2.0",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
     "babel-jest": "^29.7.0",
-    "jest": "^29.7.0"
+    "husky": "^8.0.0",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.7"
   }
 }
