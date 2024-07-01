@@ -1,7 +1,9 @@
 /*App.js*/
 
-
+import { RecoilRoot } from 'recoil';
 import React, { useState, useEffect } from "react";
+import CharacterCounter from './components/CharacterCounter/CharacterCounter';
+import TodoApp from './components/TodoApp/index';
 
 
 const App = () => {
@@ -35,6 +37,10 @@ const App = () => {
           </div>
         </div>
       ))}
+      <RecoilRoot>
+        <CharacterCounter />
+        <TodoApp />
+      </RecoilRoot>
     </div>
   );
 };
