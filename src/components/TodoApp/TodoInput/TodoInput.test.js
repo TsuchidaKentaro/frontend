@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { RecoilRoot } from 'recoil';
 import TodoInput from '../index/index';
-import { todoListState } from '../../../recoil/atoms';
 
 test('adds a new todo item', () => {
   render(

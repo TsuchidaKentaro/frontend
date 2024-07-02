@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useRecoilState } from 'recoil';
 import { todoListState } from '../../../recoil/atoms';
 
@@ -33,11 +34,22 @@ function TodoItem({ item }) {
   return (
     <li>
       <input type="text" value={item.text} onChange={editItemText} />
-      <input type="checkbox" checked={item.isComplete} onChange={toggleItemCompletion} />
+      <input
+        type="checkbox"
+        checked={item.isComplete}
+        onChange={toggleItemCompletion}
+      />
       <button onClick={deleteItem}>X</button>
     </li>
   );
 }
+
+TodoItem.propTypes = {
+  item: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    isComplete: PropTypes.bool.isRequired,
+  }).isRequired,
+};
 
 function replaceItemAtIndex(arr, index, newValue) {
   return [...arr.slice(0, index), newValue, ...arr.slice(index + 1)];
