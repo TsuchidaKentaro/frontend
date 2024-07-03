@@ -12,7 +12,9 @@ function App() {
         const fetchData = async () => {
             try {
                 const res = await fetch('/api');
+
                 const json = await res.json();
+
                 setFruits(json);
             } catch (e) {
                 // console.error(e.message);
